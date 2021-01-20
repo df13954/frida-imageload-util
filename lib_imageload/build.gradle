@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.github.dcendents.android-maven'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -30,3 +30,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
 }
+
+//uploadArchives {
+//    repositories.mavenDeployer {
+//        def mavenDirPath = file('E:\\ASproject\\GitHub\\Permission')
+//        repository(url: "file://${mavenDirPath.absolutePath}")
+//        pom.project {
+//            groupId "com.frida.debug"
+//            artifactId "imageload"
+//            version "1.0.0"
+//        }
+//    }
+//}
