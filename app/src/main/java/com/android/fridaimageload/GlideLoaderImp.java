@@ -3,6 +3,7 @@ package com.android.fridaimageload;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ImageView;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.debug.imageload.ILoaderStrategy;
@@ -105,12 +106,18 @@ public class GlideLoaderImp implements ILoaderStrategy {
 
     @Override
     public void clearMemoryCache() {
-        //todo 清理内存缓存
+        // 清理内存缓存
+        if (App.sApp != null) {
+            Glide.get(App.sApp).clearMemory();
+        }
     }
 
     @Override
     public void clearDiskCache() {
-        //todo 清理磁盘缓存
-
+        // 清理磁盘缓存
+        if (App.sApp != null) {
+            //此方法需要在子线程操作
+            Glide.get(App.sApp).clearDiskCache();
+        }
     }
 }

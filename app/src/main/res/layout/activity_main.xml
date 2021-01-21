@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Button
+        android:onClick="clearDiskCache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="清理本地缓存：cache,image_manager_disk_cache" />
+
     <ImageView
         android:id="@+id/iv_image"
         android:layout_width="200dp"
